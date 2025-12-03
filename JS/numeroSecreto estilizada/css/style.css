@@ -1,0 +1,78 @@
+/* Estilo general del body */
+body {
+    font-family: 'Arial', sans-serif;
+    background: #fbecec; /* Rosa muy suave */
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Contenedor central */
+.container {
+    background: #fff0f5; /* Lila pastel */
+    padding: 30px 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    border: 2px solid #ffd1dc; /* rosa pastel borde */
+}
+
+/* Títulos */
+h1 {
+    color: #ff6f91; /* rosa más intenso */
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* Párrafos */
+p {
+    font-size: 1rem;
+    margin: 10px 0;
+    color: #555;
+}
+
+/* Input */
+input[type="number"] {
+    width: 80%;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 1px solid #ffb6b9; /* borde rosa pastel */
+    margin-bottom: 15px;
+    text-align: center;
+    background-color: #fff7f9; /* fondo muy suave */
+}
+
+/* Botón */
+button {
+    background: #ffb6b9; /* rosa pastel */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background: #ff6f91; /* rosa más intenso */
+    transform: scale(1.05);
+}
+
+/* Mensajes */
+#mensaje {
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+#intentos {
+    margin-top: 10px;
+    color: #888;
+}

@@ -1,0 +1,56 @@
+/* Fondo general */
+body {
+  background: #fdf0f5; /* Rosa pastel muy suave */
+  color: #333;
+}
+
+/* Título */
+h1 {
+  color: #ff7f91; /* Rosa predominante */
+}
+
+/* Botones y select */
+select, button {
+  background-color: #fce8b6; /* Amarillo pastel */
+  color: #333;
+}
+
+button:hover, select:hover {
+  background-color: #ffc078;
+}
+
+/* Contador, tiempo y récord */
+#minesCounter, #timer, #record {
+  color: #ff8c8c;
+}
+
+/* Celdas normales */
+.cell {
+  background-color: #ffe0e5; /* Rosa pastel */
+  border-color: #ffc9d6;
+}
+
+/* Hover */
+.cell:hover {
+  background-color: #ffd1dc;
+}
+
+/* Celdas reveladas */
+.cell.revealed {
+  background-color: #fff0f5;
+  border-color: #ffe0e5;
+}
+
+/* Minas */
+.cell.mine {
+  background-color: #ffb3c6;
+  color: #ff2e63;
+  border-color: #ff8c8c;
+}
+
+/* Banderas */
+.cell.flag {
+  background-color: #fce8b6;
+  color: #f7cf69;
+  border-color: #f7cf69;
+}

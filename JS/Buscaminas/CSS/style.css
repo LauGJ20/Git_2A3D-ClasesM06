@@ -1,0 +1,80 @@
+/* Contenedor principal */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centrar contenido */
+}
+
+/* Título */
+h1 {
+  margin-bottom: 10px;
+  text-shadow: 1px 1px 2px #ffe0e5;
+}
+
+/* Selector y botones */
+select, button {
+  padding: 6px 12px;
+  margin: 5px;
+  border-radius: 8px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+  transition: all 0.2s ease;
+}
+
+/* Contador de minas, tiempo y récord */
+#minesCounter, #timer, #record {
+  font-weight: bold;
+  margin: 5px 10px;
+}
+
+/* Tablero centrado */
+#board {
+  display: grid;
+  margin-top: 20px;
+  gap: 2px;
+  justify-content: center;
+}
+
+/* Celdas normales */
+.cell {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 18px;
+  user-select: none;
+  border: 2px solid; /* Color definido en colors.css */
+  transition: background-color 0.2s ease;
+}
+
+/* Hover */
+.cell:hover {
+  transition: background-color 0.2s ease;
+}
+
+/* Celdas reveladas */
+.cell.revealed {
+  cursor: default;
+  box-shadow: inset 1px 1px 3px rgba(0,0,0,0.1);
+  border: 2px solid; /* Color definido en colors.css */
+}
+
+/* Minas */
+.cell.mine {
+  font-size: 20px;
+  border: 2px solid; /* Color definido en colors.css */
+}
+
+/* Banderas */
+.cell.flag {
+  font-size: 20px;
+  border: 2px solid; /* Color definido en colors.css */
+}
