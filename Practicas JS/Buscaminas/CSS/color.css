@@ -11,7 +11,7 @@ h1 {
 
 /* Botones y select */
 select, button {
-  background-color: #fce8b6; /* Amarillo pastel */
+  background-color: #ffd6a5; /* Amarillo pastel */
   color: #333;
 }
 
@@ -21,7 +21,7 @@ button:hover, select:hover {
 
 /* Contador, tiempo y récord */
 #minesCounter, #timer, #record {
-  color: #ff8c8c;
+  color: #ff7f91;
 }
 
 /* Celdas normales */
@@ -50,7 +50,7 @@ button:hover, select:hover {
 
 /* Banderas */
 .cell.flag {
-  background-color: #fce8b6;
-  color: #f7cf69;
-  border-color: #f7cf69;
+  background-color: #fff1a8;
+  color: #ffb800;
+  border-color: #ffe066;
 }

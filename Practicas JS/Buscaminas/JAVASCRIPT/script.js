@@ -85,7 +85,6 @@ function initGame() {
   }
 }
 
-// Contar minas alrededor
 function countNeighbors(r, c) {
   let count = 0;
   for (let dr = -1; dr <= 1; dr++) {
@@ -100,7 +99,6 @@ function countNeighbors(r, c) {
   return count;
 }
 
-// Revelar celda
 function revealCell(r, c) {
   const cell = board[r][c];
   if (gameOver || cell.revealed || cell.flagged) return;
@@ -121,7 +119,6 @@ function revealCell(r, c) {
   if (cell.neighbors > 0) {
     cellDiv.textContent = cell.neighbors;
   } else {
-    // Revelar celdas adyacentes automáticamente si no hay minas alrededor
     for (let dr = -1; dr <= 1; dr++) {
       for (let dc = -1; dc <= 1; dc++) {
         const nr = r + dr;
@@ -136,7 +133,6 @@ function revealCell(r, c) {
   checkWin();
 }
 
-// Colocar o quitar bandera
 function toggleFlag(r, c) {
   const cell = board[r][c];
   if (gameOver || cell.revealed) return;
@@ -157,7 +153,6 @@ function toggleFlag(r, c) {
   minesCounter.textContent = flagsLeft;
 }
 
-// Revelar todas las minas
 function revealAllMines() {
   for (let r = 0; r < rows; r++) {
     for (let c = 0; c < cols; c++) {
@@ -169,7 +164,6 @@ function revealAllMines() {
   }
 }
 
-// Comprobar si se ganó
 function checkWin() {
   let won = true;
   for (let r = 0; r < rows; r++) {
@@ -224,29 +218,5 @@ function updateRecordDisplay() {
 // Actualizar récord al cambiar dificultad
 difficultySelect.addEventListener('change', updateRecordDisplay);
 
-// ------------------------------------------------
-// Función de ayuda: revelar algunas celdas seguras
-boardDiv.addEventListener('click', revealSomeCells);
-
-function revealSomeCells(e) {
-  if (gameOver) return;
-
-  // Elegir 3-5 celdas al azar que no estén reveladas ni sean minas
-  let unrevealedSafeCells = [];
-  for (let r = 0; r < rows; r++) {
-    for (let c = 0; c < cols; c++) {
-      if (!board[r][c].revealed && !board[r][c].mine) {
-        unrevealedSafeCells.push({r, c});
-      }
-    }
-  }
-
-  if (unrevealedSafeCells.length === 0) return;
-
-  const count = Math.min(5, unrevealedSafeCells.length); // revelar máximo 5
-  for (let i = 0; i < count; i++) {
-    const index = Math.floor(Math.random() * unrevealedSafeCells.length);
-    const cell = unrevealedSafeCells.splice(index, 1)[0];
-    revealCell(cell.r, cell.c);
-  }
-}
+// Inicializar juego al cargar
+initGame();
