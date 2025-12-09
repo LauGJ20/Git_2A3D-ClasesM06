@@ -1,10 +1,10 @@
-/* Fondo negro sólido */
+/* Fondo negro sólido y tipografía moderna */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
     min-height: 100vh;
-    background: #ffffff;
+    background: #000000;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -13,44 +13,99 @@ body {
 
 /* Título en rojo oscuro */
 h1 {
-    color: #b22222;
+    color: #ffffff;
     font-size: 3rem;
-    margin-bottom: 40px;
-    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+    margin-bottom: 50px;
+    text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.5);
 }
 
-/* Lista en columna (vertical) */
-ul {
-    list-style: none;
-    padding: 0;
+/* Navegación vertical centrada */
+nav {
     display: flex;
     flex-direction: column;
     gap: 20px;
-}
-
-/* Elementos de la lista */
-li {
-    margin: 0;
+    align-items: center;
 }
 
 /* Botones rojos oscuros */
-a {
+nav a {
     text-decoration: none;
     color: #ffffff;
-    background: #343434;
-    padding: 15px 25px;
+    background: #b22222;
+    padding: 15px 30px;
     border-radius: 12px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.4);
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     transition: all 0.3s ease;
     text-align: center;
+    min-width: 200px;
     display: block;
-    min-width: 120px;
 }
 
-/* Hover con más intensidad */
-a:hover {
+/* Hover con efecto flotante y rojo más intenso */
+nav a:hover {
     transform: translateY(-5px);
     background: #8b0000;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.6);
+}
+
+
+
+/* Categoría 2 */
+    .categoria2 {
+        background: #ff7700;
+    }
+
+    .categoria2:hover {
+        background: #d46300; /* más oscuro */
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.6);
+    }
+
+
+/* Categoría 3 */
+    .categoria3 {
+        background: #ffc400;
+    }
+
+    .categoria3:hover {
+        background: #d49f00; /* más oscuro */
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.6);
+    }
+
+
+/* Categoría 4 */
+    .categoria4 {
+        background: #51c711;
+    }
+
+    .categoria4:hover {
+        background: #3b950a; /* más oscuro */
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.6);
+    }
+
+
+/* Categoría 5 */
+    .categoria5 {
+        background: #1e90ff;
+    }
+
+    .categoria5:hover {
+        background: #0066cc; /* más oscuro */
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.6);
+    }
+
+
+/* Categoría 6 */
+.categoria6 {
+    background: #bd54fe;
+}
+
+.categoria6:hover {
+    background: #6a1e99; /* más oscuro */
+    transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0,0,0,0.6);
 }
