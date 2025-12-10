@@ -12,7 +12,7 @@
 
 #teclado {
     display: grid;
-    grid-template-columns: repeat(3, 60px);
+    grid-template-columns: repeat(5, 60px);
     gap: 10px;
     justify-content: center;
 }
@@ -35,4 +35,10 @@
 
 .tecla:hover {
     background-color: #c1c1c1;
+}
+
+
+h1 {
+    text-align: center;
+    margin: 50px;
 }
