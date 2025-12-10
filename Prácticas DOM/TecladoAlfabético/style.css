@@ -1,0 +1,40 @@
+#contenedor-teclados {
+    display: flex;
+    justify-content: center;
+    gap: 50px; /* espacio entre teclados */
+    margin-top: 20px;
+}
+
+#teclado-alfabetico, #teclado-numerico {
+    display: grid;
+    gap: 10px;
+}
+
+/* Teclado alfabético: 10 columnas */
+#teclado-alfabetico {
+    grid-template-columns: repeat(10, 50px);
+}
+
+/* Teclado numérico: 3 columnas */
+#teclado-numerico {
+    grid-template-columns: repeat(3, 60px);
+}
+
+.tecla {
+    color: black;
+    width: 50px;
+    height: 50px;
+    font-size: 1.3rem;
+    border-radius: 10px;
+    border: solid 2px #515151;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.tecla:hover {
+    background-color: #c1c1c1;
+}
