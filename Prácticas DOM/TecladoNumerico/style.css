@@ -1,4 +1,7 @@
+/* --------------------------- FUENTES --------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
+/* --------------------------- ESTILOS GENERALES --------------------------- */
 #pantalla {
     width: 200px;
     height: 40px;
@@ -6,7 +9,7 @@
     margin-bottom: 20px;
     text-align: center;
     border-radius: 5px;
-    border: 2px solid #333;
+    border: 2px solid #1b1b1b;
 }
 
 
@@ -24,7 +27,7 @@
     height: 60px;
     font-size: 1.3rem;
     border-radius: 10px;
-    border: solid 3px #515151;
+    border: solid 3px #1b1b1b;
     background-color: white;
     display: flex;
     align-items: center;
@@ -34,11 +37,12 @@
 }
 
 .tecla:hover {
-    background-color: #c1c1c1;
+    background-color: #c3c3c3;
 }
 
 
-h1 {
+body {
     text-align: center;
     margin: 50px;
+    font-family: 'Montserrat', sans-serif;
 }

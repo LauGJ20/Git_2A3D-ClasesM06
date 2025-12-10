@@ -15,27 +15,27 @@ for (let i = 1; i < 100; i++) {
     tecla.innerHTML = "<p>" + i + "</p>";
     tecla.className = "tecla";
 
-    // Si es número primo → fondo verde
+    // Si es número primo → verde
     if (esPrimo(i)) {
-        tecla.style.background = "green";
+        tecla.style.background = "#06a53eff";
         tecla.style.color = "white";
     }
 
     // Si es múltiplo de 2 → azul
     if (i % 2 === 0) {
-        tecla.style.background = "blue";
+        tecla.style.background = "#0666c6ff";
         tecla.style.color = "white";
     }
 
     // Si es múltiplo de 3 → rojo
     if (i % 3 === 0) {
-        tecla.style.background = "red";
+        tecla.style.background = "#d0092aff";
         tecla.style.color = "white";
     }
 
     // Si es múltiplo de 5 → amarillo
     if (i % 5 === 0) {
-        tecla.style.background = "yellow";
+        tecla.style.background = "#ffd900ff";
         tecla.style.color = "black";
     }
 
