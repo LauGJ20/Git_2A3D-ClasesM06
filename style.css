@@ -1,4 +1,3 @@
-/* Fondo negro y tipografía */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
@@ -15,16 +14,15 @@ body {
 h1 {
     color: #ffffff;
     font-size: 3rem;
-    margin-bottom: 30px;
+    margin-bottom: 70px;
     text-shadow: 2px 2px 10px rgba(255,255,255,0.5);
 }
 
-/* Ocultar checkboxes */
+
 .accordion input {
     display: none;
 }
 
-/* Estilo de labels (botones de categoría) */
 .accordion label {
     cursor: pointer;
     padding: 15px 30px;
@@ -38,13 +36,13 @@ h1 {
     transition: all 0.3s ease;
 }
 
-/* Hover de los labels */
+
 .accordion label:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 20px rgba(0,0,0,0.6);
 }
 
-/* Panel oculto inicialmente */
+
 .panel {
     max-height: 0;
     overflow: hidden;
@@ -55,12 +53,12 @@ h1 {
     margin-bottom: 10px;
 }
 
-/* Mostrar panel cuando checkbox está marcado */
+
 .accordion input:checked + label + .panel {
-    max-height: 500px; /* suficiente para mostrar todos los enlaces */
+    max-height: 500px;
 }
 
-/* Enlaces dentro del panel */
+
 .panel a {
     background: #333333;
     color: #ffffff;
