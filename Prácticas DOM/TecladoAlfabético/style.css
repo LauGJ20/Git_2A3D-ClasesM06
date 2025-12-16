@@ -1,27 +1,71 @@
+/* --------------------------- FUENTES --------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+/* --------------------------- ESTILOS GENERALES --------------------------- */
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px; /* opcional: para separar del teclado */
+}
+
+#barra-entrada {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 20px auto;
+}
+
+#pantalla {
+    width: 400px;
+    height: 40px;
+    padding: 5px 10px;
+    font-size: 1.5rem;
+    border: 2px solid #333;
+    border-radius: 5px;
+    background-color: #f4f4f4;
+}
+
+/* Botón enviar */
+#btn-enviar {
+    width: 100px;
+    height: 50px;
+    padding: 0 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 2px solid #000000;
+    background-color: #0077bc;
+    color: white;
+    cursor: pointer;
+}
+
+#btn-enviar:hover {
+    background-color: #004369;
+}
+
+/* Teclados */
 #contenedor-teclados {
     display: flex;
     justify-content: center;
-    gap: 50px; /* espacio entre teclados */
-    margin-top: 20px;
+    gap: 50px;
 }
 
-#teclado-alfabetico, #teclado-numerico {
+#teclado-alfabetico {
     display: grid;
+    grid-template-columns: repeat(10, 50px);
     gap: 10px;
 }
 
-/* Teclado alfabético: 10 columnas */
-#teclado-alfabetico {
-    grid-template-columns: repeat(10, 50px);
-}
-
-/* Teclado numérico: 3 columnas */
 #teclado-numerico {
+    display: grid;
     grid-template-columns: repeat(3, 60px);
+    gap: 10px;
 }
 
 .tecla {
-    color: black;
     width: 50px;
     height: 50px;
     font-size: 1.3rem;
