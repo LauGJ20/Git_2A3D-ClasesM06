@@ -1,19 +1,14 @@
-let pantalla = document.getElementById("pantalla");
-let botonEnviar = document.getElementById("btn-enviar");
+// ---------- ELEMENTOS ----------
+const pantalla = document.getElementById("pantalla");
+const botonEnviar = document.getElementById("btn-enviar");
+const botonBorrar = document.getElementById("btn-borrar");
+const mensajeError = document.getElementById("mensaje-error");
+const tecladoAlf = document.getElementById("teclado-alfabetico");
+const tecladoNum = document.getElementById("teclado-numerico");
 
-// ---------- BOTÓN ENVIAR ----------
-botonEnviar.addEventListener("click", () => {
-    if (pantalla.textContent.trim() === "") {
-        alert("No hay nada que enviar");
-    } else {
-        alert("Texto enviado: " + pantalla.textContent);
-        pantalla.textContent = "";
-    }
-});
-
-// ---------- FUNCIONES ----------
+// ---------- FUNCIONES AUXILIARES ----------
 function esVocal(letra) {
-    return ["A", "E", "I", "O", "U"].includes(letra);
+    return ["A","E","I","O","U"].includes(letra);
 }
 
 function esPrimo(num) {
@@ -24,61 +19,82 @@ function esPrimo(num) {
     return true;
 }
 
-// ---------- TECLADO ALFABÉTICO ----------
-let tecladoAlf = document.getElementById("teclado-alfabetico");
-
-for (let codigo = 65; codigo <= 90; codigo++) {
-    let letra = String.fromCharCode(codigo);
-    let tecla = document.createElement("div");
-
-    tecla.textContent = letra;
-    tecla.className = "tecla";
-
-    // Vocales en naranja
-    if (esVocal(letra)) {
-        tecla.style.background = "orange";
-        tecla.style.color = "white";
+// ---------- FUNCIONES PRINCIPALES ----------
+function escribirTecla(valor) {
+    if (pantalla.textContent.length >= 5) {
+        mensajeError.textContent = "¡Texto demasiado largo!";
+        return;
     }
-
-    // Escribir letra en pantalla
-    tecla.addEventListener("click", () => {
-        pantalla.textContent += letra;
-    });
-
-    tecladoAlf.appendChild(tecla);
+    pantalla.textContent += valor;
+    mensajeError.textContent = "";
 }
 
-// ---------- TECLADO NUMÉRICO ----------
-let tecladoNum = document.getElementById("teclado-numerico");
-
-for (let i = 1; i <= 9; i++) {
-    let tecla = document.createElement("div");
-
-    tecla.textContent = i;
-    tecla.className = "tecla";
-
-    // Colores
-    if (i % 2 === 0) {
-        tecla.style.background = "blue";
-        tecla.style.color = "white";
-    }
-    if (i % 3 === 0) {
-        tecla.style.background = "red";
-        tecla.style.color = "white";
-    }
-    if (i % 5 === 0) {
-        tecla.style.background = "yellow";
-        tecla.style.color = "black";
-    }
-    if (esPrimo(i)) {
-        tecla.style.background = "green";
-        tecla.style.color = "white";
-    }
-
-    // Escribir número en pantalla
-    tecla.addEventListener("click", () => {
-        pantalla.textContent += i;
-    });
-
-    tecladoNum.appendChild(tecla);
+function borrarUltimo() {
+    pantalla.textContent = pantalla.textContent.slice(0, -1);
+    mensajeError.textContent = "";
 }
+
+function enviarTexto() {
+    if (pantalla.textContent.trim() === "") {
+        mensajeError.textContent = "No hay nada que enviar";
+    } else {
+        alert("Texto enviado: " + pantalla.textContent);
+        pantalla.textContent = "";
+        mensajeError.textContent = "";
+    }
+}
+
+// ---------- CREACIÓN DEL TECLADO ----------
+function crearTecladoAlfabetico() {
+    for (let codigo = 65; codigo <= 90; codigo++) {
+        let letra = String.fromCharCode(codigo);
+        let tecla = document.createElement("div");
+        tecla.textContent = letra;
+        tecla.className = "tecla";
+
+        if (esVocal(letra)) {
+            tecla.style.background = "orange";
+            tecla.style.color = "white";
+        }
+
+        tecla.addEventListener("click", () => escribirTecla(letra));
+        tecladoAlf.appendChild(tecla);
+    }
+}
+
+function crearTecladoNumerico() {
+    for (let i = 1; i <= 9; i++) {
+        let tecla = document.createElement("div");
+        tecla.textContent = i;
+        tecla.className = "tecla";
+
+        // Colores según múltiplos/primos
+        if (i % 2 === 0) {
+            tecla.style.background = "blue";
+            tecla.style.color = "white";
+        }
+        if (i % 3 === 0) {
+            tecla.style.background = "red";
+            tecla.style.color = "white";
+        }
+        if (i % 5 === 0) {
+            tecla.style.background = "yellow";
+            tecla.style.color = "black";
+        }
+        if (esPrimo(i)) {
+            tecla.style.background = "green";
+            tecla.style.color = "white";
+        }
+
+        tecla.addEventListener("click", () => escribirTecla(i));
+        tecladoNum.appendChild(tecla);
+    }
+}
+
+// ---------- EVENTOS BOTONES ----------
+botonEnviar.addEventListener("click", enviarTexto);
+botonBorrar.addEventListener("click", borrarUltimo);
+
+// ---------- INICIALIZACIÓN ----------
+crearTecladoAlfabetico();
+crearTecladoNumerico();
