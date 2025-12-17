@@ -8,35 +8,76 @@ body {
 
 h1 {
     text-align: center;
-    margin: 30px; /* opcional: para separar del teclado */
+    font-size: 2.5rem;
+    margin: 50px;
 }
 
+/* --------------------------- HISTORIAL WORDLE --------------------------- */
+#historial-intentos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin: 50px 15px 15px 15px;
+}
+
+.fila-intento {
+    display: flex;
+    gap: 10px;
+}
+
+.cuadro-letra {
+    width: 50px;
+    height: 50px;
+    border: 2px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    border-radius: 15px;
+}
+
+/* Colores Wordle */
+.verde { background-color: green; color: white; }
+.amarillo { background-color: gold; color: white; }
+.gris { background-color: lightgray; color: white; }
+
+/* --------------------------- MENSAJE DE ERROR --------------------------- */
+#mensaje-error {
+    text-align: center;
+    color: red;
+    font-weight: bold;
+    min-height: 20px;
+}
+
+/* --------------------------- BARRA DE ENTRADA --------------------------- */
 #barra-entrada {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
-    margin: 20px auto;
+    margin: 15px;
 }
 
 #pantalla {
     width: 400px;
-    height: 40px;
+    height: 36px;
     padding: 5px 10px;
     font-size: 1.5rem;
     border: 2px solid #333;
-    border-radius: 5px;
+    border-radius: 10px;
     background-color: #f4f4f4;
 }
 
-/* Botón enviar */
 #btn-enviar {
     width: 100px;
     height: 50px;
     padding: 0 20px;
-    font-size: 1rem;
-    border-radius: 5px;
-    border: 2px solid #000000;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    border: 2px solid #003350;
     background-color: #0077bc;
     color: white;
     cursor: pointer;
@@ -46,14 +87,13 @@ h1 {
     background-color: #004369;
 }
 
-/* Botón borrar */
 #btn-borrar {
     width: 100px;
     height: 50px;
     padding: 0 20px;
-    font-size: 1rem;
-    border-radius: 5px;
-    border: 2px solid #000000;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    border: 2px solid #650000;
     background-color: #e60000;
     color: white;
     cursor: pointer;
@@ -63,41 +103,32 @@ h1 {
     background-color: #990000;
 }
 
-/* Mensaje de error */
-#mensaje-error {
-    text-align: center;
-    color: red;
-    font-weight: bold;
-    margin: 15px;
-    min-height: 20px;
-}
-
-
-/* Teclados */
+/* --------------------------- TECLADOS --------------------------- */
 #contenedor-teclados {
     display: flex;
     justify-content: center;
-    gap: 50px;
+    gap: 70px;
+    margin: 30px;
 }
 
 #teclado-alfabetico {
     display: grid;
     grid-template-columns: repeat(10, 50px);
-    gap: 10px;
+    gap: 12px;
 }
 
 #teclado-numerico {
     display: grid;
     grid-template-columns: repeat(3, 60px);
-    gap: 10px;
+    gap: 12px;
 }
 
 .tecla {
     width: 50px;
     height: 50px;
     font-size: 1.3rem;
-    border-radius: 10px;
-    border: solid 2px #515151;
+    border-radius: 15px;
+    border: solid 2px black;
     background-color: white;
     display: flex;
     align-items: center;
@@ -107,5 +138,9 @@ h1 {
 }
 
 .tecla:hover {
-    background-color: #c1c1c1;
+    background-color: #a8a8a8;
+}
+
+.tecla:active {
+    transform: scale(0.95);
 }
