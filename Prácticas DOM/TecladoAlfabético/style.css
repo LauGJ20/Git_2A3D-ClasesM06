@@ -1,0 +1,146 @@
+/* --------------------------- FUENTES --------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+/* --------------------------- ESTILOS GENERALES --------------------------- */
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin: 50px;
+}
+
+/* --------------------------- HISTORIAL WORDLE --------------------------- */
+#historial-intentos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin: 50px 15px 15px 15px;
+}
+
+.fila-intento {
+    display: flex;
+    gap: 10px;
+}
+
+.cuadro-letra {
+    width: 50px;
+    height: 50px;
+    border: 2px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    border-radius: 15px;
+}
+
+/* Colores Wordle */
+.verde { background-color: green; color: white; }
+.amarillo { background-color: gold; color: white; }
+.gris { background-color: lightgray; color: white; }
+
+/* --------------------------- MENSAJE DE ERROR --------------------------- */
+#mensaje-error {
+    text-align: center;
+    color: red;
+    font-weight: bold;
+    min-height: 20px;
+}
+
+/* --------------------------- BARRA DE ENTRADA --------------------------- */
+#barra-entrada {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 15px;
+}
+
+#pantalla {
+    width: 400px;
+    height: 36px;
+    padding: 5px 10px;
+    font-size: 1.5rem;
+    border: 2px solid #333;
+    border-radius: 10px;
+    background-color: #f4f4f4;
+}
+
+#btn-enviar {
+    width: 100px;
+    height: 50px;
+    padding: 0 20px;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    border: 2px solid #003350;
+    background-color: #0077bc;
+    color: white;
+    cursor: pointer;
+}
+
+#btn-enviar:hover {
+    background-color: #004369;
+}
+
+#btn-borrar {
+    width: 100px;
+    height: 50px;
+    padding: 0 20px;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    border: 2px solid #650000;
+    background-color: #e60000;
+    color: white;
+    cursor: pointer;
+}
+
+#btn-borrar:hover {
+    background-color: #990000;
+}
+
+/* --------------------------- TECLADOS --------------------------- */
+#contenedor-teclados {
+    display: flex;
+    justify-content: center;
+    gap: 70px;
+    margin: 30px;
+}
+
+#teclado-alfabetico {
+    display: grid;
+    grid-template-columns: repeat(10, 50px);
+    gap: 12px;
+}
+
+#teclado-numerico {
+    display: grid;
+    grid-template-columns: repeat(3, 60px);
+    gap: 12px;
+}
+
+.tecla {
+    width: 50px;
+    height: 50px;
+    font-size: 1.3rem;
+    border-radius: 15px;
+    border: solid 2px black;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.tecla:hover {
+    background-color: #a8a8a8;
+}
+
+.tecla:active {
+    transform: scale(0.95);
+}

@@ -1,0 +1,31 @@
+* {
+    border: dotted black 1px;
+}
+
+h2 {
+    display: inline-block;
+    width: 45%;
+    background-color: gray;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+section, section p{
+    display: flex;
+    justify-content: space-around;
+    margin: 15px;
+}
+
+nav {
+    margin: 15px 0px 15px 0px ;
+    background-color: gray;
+}
+
+footer {
+    background-color: black;
+    color:white;
+}

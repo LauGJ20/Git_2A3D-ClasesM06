@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Canvas</title>
+    <style>
+        canvas {
+            border: 1px solid black;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Mi primer Canvas</h1>
+    <canvas id="canvas-box1" width="200" height="200"></canvas>
+    <canvas id="canvas-box2" width="200" height="200"></canvas>
+    <canvas id="canvas-box3" width="200" height="200"></canvas>
+    <canvas id="canvas-box4" width="200" height="200"></canvas>
+    <canvas id="canvas-box5" width="200" height="200"></canvas>
+
+    <script type="application/javascript">
+        window.onload = function () {
+            canvasBox1();
+            canvasBox2();
+            canvasBox3();
+            canvasBox4();
+        }
+
+        function canvasBox1() {
+            var canvas = document.getElementById("canvas-box1");
+            if (canvas.getContext) {
+                var ctx = canvas.getContext("2d");
+
+                // Rectángulo verde (stroke)
+                ctx.strokeStyle = "rgb(0,255,0)";
+                ctx.lineWidth = 5;
+                ctx.strokeRect(10, 10, 50, 50); // Ancho positivo
+
+                // Rectángulo rojo (fill)
+                ctx.fillStyle = "rgb(200,0,0)";
+                ctx.fillRect(60, 10, 50, 50);
+            }
+        }
+
+        function canvasBox2() {
+            var canvas = document.getElementById("canvas-box2");
+            if (canvas.getContext) {
+                var ctx = canvas.getContext("2d");
+
+                ctx.fillStyle = "red";
+                ctx.fillRect(50, 50, 100, 100);
+
+                // Borro parte del rectángulo
+                ctx.clearRect(70, 70, 60, 60);
+
+                // Rectángulo azul
+                ctx.strokeStyle = "blue";
+                ctx.strokeRect(80, 80, 40, 40);
+            }
+        }
+
+        function canvasBox3() {
+            var canvas = document.getElementById("canvas-box3");
+            if (canvas.getContext) {
+                var ctx = canvas.getContext("2d");
+
+                //1. Me coloco en la coordenada inicial
+                ctx.moveTo(100, 20);
+
+                //2. Marco el camino
+                ctx.lineTo(50, 150);
+                ctx.lineTo(150, 150);
+
+                // la ahorro si es relleno
+                ctx.lineTo(100, 20);
+
+                //3. Relleno el triangulo
+                ctx.fillStyle = "red";
+                ctx.fill();
+
+                //4. Nuevo triangulo
+                ctx.beginPath();
+                ctx.moveTo(100, 50);
+                ctx.lineTo(70, 130);
+                ctx.lineTo(130, 130);
+                ctx.lineTo(100, 50);
+
+                //5. Pinto su interior
+                ctx.fillStyle = "white";
+                ctx.fill();
+
+                //6. Dibujo el contorno
+                ctx.strokeStyle = "blue";
+                ctx.lineWidth = 5;
+                ctx.stroke();
+            }
+        }
+
+
+            function canvasBox4() {
+                var canvas = document.getElementById("canvas-box4");
+                if (canvas.getContext) {
+                    var ctx = canvas.getContext("2d");
+
+                    ctx.beginPath();
+                    ctx.moveTo(100, 100); 
+                    ctx.arc(100, 100, 50, degToRoad(30), degToRoad(330));
+
+                    ctx.closePath();
+                    ctx.fillStyle = "red";
+                    ctx.lineWidth = 5;
+                    ctx.fill();
+
+
+                    ctx.beginPath();
+                    ctx.arc(100, 80, 5, degToRoad(0), degToRoad(360));  
+                    ctx.fillStyle = "white";
+                    ctx.fill();
+
+                }
+            }
+
+            function degToRoad(degress) {
+                return degress * Math.PI / 180;
+
+            };
+    </script>
+
+    
+</body>
+
+</html>

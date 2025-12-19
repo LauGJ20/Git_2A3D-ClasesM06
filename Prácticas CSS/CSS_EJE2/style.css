@@ -1,0 +1,84 @@
+* {
+    border: dotted 1px black;
+    margin: 10px;
+
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(239, 239, 239);
+}
+
+h1 {
+    font-size: 45px;
+}
+
+
+.header1 {
+    background-color: rgb(0, 164, 189);
+    padding: 10px;
+}
+
+.header1 p {
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+
+aside {
+    background-color: rgb(230, 232, 112);
+    padding: 15px;
+}
+
+footer {
+    background-color: rgb(0, 164, 189);
+    padding: 10px;
+}
+
+header {
+    background-color: rgb(203, 233, 128);
+} 
+
+main{
+   display: flex;
+   gap: 20px;             /* separa las secciones del aside */
+   align-items: flex-start;
+} 
+
+
+nav {
+    padding: 2px;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav a {
+    text-decoration: none;
+    color: rgb(0, 164, 189);
+}
+
+.section1 {
+    background-color: rgb(240, 240, 242);  
+    display: block;
+}
+
+.section2 {
+    background-color: rgb(242, 242, 242);  
+    display: flex;       /* filas flexibles */
+    gap: 15px;           /* separación entre columnas */
+    flex-wrap: wrap;     /* permite que bajen si no caben */
+}
+
+
+section article {
+    background-color: rgb(247, 247, 247);   
+    margin: 15px;
+    padding: 10px;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;  /* apila las secciones */
+    flex: 3;                 /* ocupa más espacio que aside */
+}

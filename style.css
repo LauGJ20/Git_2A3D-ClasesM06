@@ -1,0 +1,96 @@
+/* --------------------------- FUENTES --------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+/* --------------------------- ESTILOS GENERALES --------------------------- */
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background: #000000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 50px;
+}
+
+h1 {
+    color: #ffffff;
+    font-size: 3rem;
+    margin-bottom: 70px;
+    text-shadow: 2px 2px 10px rgba(255,255,255,0.5);
+}
+
+
+.accordion input {
+    display: none;
+}
+
+.accordion label {
+    cursor: pointer;
+    padding: 15px 30px;
+    width: 250px;
+    border-radius: 12px;
+    margin-bottom: 5px;
+    display: block;
+    font-size: 1.2rem;
+    color: #fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+    transition: all 0.3s ease;
+}
+
+
+.accordion label:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+}
+
+
+.panel {
+    max-height: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: max-height 0.3s ease;
+    margin-bottom: 10px;
+}
+
+
+.accordion input:checked + label + .panel {
+    max-height: 500px;
+}
+
+
+.panel a {
+    background: #333333;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 5px 0;
+    border-radius: 8px;
+    width: 200px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.panel a:hover {
+    background: #555555;
+    transform: translateY(-2px);
+}
+
+/* Colores por categoría */
+.categoria1 { background: #b22222; }
+.categoria2 { background: #ff7700; }
+.categoria3 { background: #ffc400; }
+.categoria4 { background: #51c711; }
+.categoria5 { background: #1e90ff; }
+.categoria6 { background: #bd54fe; }
+
+.categoria1:hover { background: #8b0000; }
+.categoria2:hover { background: #d46300; }
+.categoria3:hover { background: #d49f00; }
+.categoria4:hover { background: #3b950a; }
+.categoria5:hover { background: #0066cc; }
+.categoria6:hover { background: #6a1e99; }

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pixel Art Drawer</title>
+<style>
+    canvas {
+        border: 1px solid black;
+        cursor: crosshair;
+    }
+    #controls {
+        margin-top: 10px;
+    }
+    button {
+        margin-right: 5px;
+    }
+</style>
+</head>
+<body>
+
+<h1>Pixel Art Drawer</h1>
+<canvas id="pixelCanvas" width="400" height="400"></canvas>
+<div id="controls">
+    <button id="drawBtn">Dibujar</button>
+    <button id="eraseBtn">Borrar</button>
+    <button id="generate">Generar y copiar tabla</button>
+</div>
+
+<script>
+const canvas = document.getElementById("pixelCanvas");
+const ctx = canvas.getContext("2d");
+ctx.imageSmoothingEnabled = false;
+
+const rows = 20;
+const cols = 20;
+const pixelSize = canvas.width / cols;
+
+// Array de píxeles (0 = vacío, 1 = dibujado)
+let pixels = Array.from({length: rows}, () => Array(cols).fill(0));
+
+// Estado actual (dibujar o borrar)
+let currentTool = "draw";
+
+// Dibujar grilla
+function drawGrid() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    for(let y = 0; y < rows; y++){
+        for(let x = 0; x < cols; x++){
+            ctx.fillStyle = pixels[y][x] ? "black" : "white";
+            ctx.fillRect(x*pixelSize, y*pixelSize, pixelSize, pixelSize);
+            ctx.strokeStyle = "gray";
+            ctx.strokeRect(x*pixelSize, y*pixelSize, pixelSize, pixelSize);
+        }
+    }
+}
+
+drawGrid();
+
+// Dibujar o borrar píxel en la posición del mouse
+function handlePixelAt(e) {
+    const rect = canvas.getBoundingClientRect();
+    const x = Math.floor((e.clientX - rect.left) / pixelSize);
+    const y = Math.floor((e.clientY - rect.top) / pixelSize);
+    if(x >= 0 && x < cols && y >=0 && y < rows){
+        pixels[y][x] = currentTool === "draw" ? 1 : 0;
+        drawGrid();
+    }
+}
+
+let isDrawing = false;
+
+// Eventos del canvas
+canvas.addEventListener("mousedown", (e) => {
+    isDrawing = true;
+    handlePixelAt(e);
+});
+
+canvas.addEventListener("mousemove", (e) => {
+    if(isDrawing){
+        handlePixelAt(e);
+    }
+});
+
+canvas.addEventListener("mouseup", () => isDrawing = false);
+canvas.addEventListener("mouseleave", () => isDrawing = false);
+
+// Cambiar herramienta
+document.getElementById("drawBtn").addEventListener("click", () => currentTool = "draw");
+document.getElementById("eraseBtn").addEventListener("click", () => currentTool = "erase");
+
+// Botón para copiar la tabla al portapapeles
+document.getElementById("generate").addEventListener("click", async () => {
+    const text = "const pattern = " + JSON.stringify(pixels, null, 4) + ";";
+    try {
+        await navigator.clipboard.writeText(text);
+        alert("Tabla copiada como variable JS ✅");
+    } catch (err) {
+        alert("Error al copiar: " + err);
+    }
+});
+</script>
+
+</body>
+</html>
