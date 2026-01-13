@@ -87,6 +87,7 @@ h1 {
 .categoria4 { background: #51c711; }
 .categoria5 { background: #1e90ff; }
 .categoria6 { background: #bd54fe; }
+.categoria7 { background: #fe54c3; }
 
 .categoria1:hover { background: #8b0000; }
 .categoria2:hover { background: #d46300; }
@@ -94,3 +95,4 @@ h1 {
 .categoria4:hover { background: #3b950a; }
 .categoria5:hover { background: #0066cc; }
 .categoria6:hover { background: #6a1e99; }
+.categoria7:hover { background: #802a62; }
